@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умный список дел</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Умный список дел</h1>
+            <p class="app-description">Организуйте свои задачи эффективно</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Левая колонка -->
+            <div class="sidebar">
+                <div class="filters">
+                    <h3>Фильтры</h3>
+                    <div class="filter-group">
+                        <label for="category-filter">Категория</label>
+                        <select id="category-filter">
+                            <option value="all">Все категории</option>
+                            <option value="work">Работа</option>
+                            <option value="personal">Личное</option>
+                            <option value="shopping">Покупки</option>
+                            <option value="health">Здоровье</option>
+                            <option value="education">Обучение</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="priority-filter">Приоритет</label>
+                        <select id="priority-filter">
+                            <option value="all">Все приоритеты</option>
+                            <option value="high">Высокий</option>
+                            <option value="medium">Средний</option>
+                            <option value="low">Низкий</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="status-filter">Статус</label>
+                        <select id="status-filter">
+                            <option value="all">Все задачи</option>
+                            <option value="active">Активные</option>
+                            <option value="completed">Завершенные</option>
+                        </select>
+                    </div>
+                    <button id="apply-filters">Применить фильтры</button>
+                    <button id="clear-filters" style="background-color: var(--gray);">Сбросить</button>
+                </div>
+
+                <div class="stats">
+                    <h3>Статистика</h3>
+                    <div class="stats-item">
+                        <span>Всего задач:</span>
+                        <span id="total-tasks">0</span>
+                    </div>
+                    <div class="stats-item">
+                        <span>Выполнено:</span>
+                        <span id="completed-tasks">0</span>
+                    </div>
+                    <div class="stats-item">
+                        <span>Осталось:</span>
+                        <span id="pending-tasks">0</span>
+                    </div>
+                    <div class="stats-item">
+                        <span>Высокий приоритет:</span>
+                        <span id="high-priority-tasks">0</span>
+                    </div>
+                </div>
+            </div> <!-- ✅ Закрыли sidebar -->
+
+            <!-- Правая колонка -->
+            <div class="tasks-container">
+                <form id="task-form" class="task-form">
+                    <input type="text" id="task-input" placeholder="Добавьте новую задачу..." required>
+
+                    <select id="task-category">
+                        <option value="work">Работа</option>
+                        <option value="personal">Личное</option>
+                        <option value="shopping">Покупки</option>
+                        <option value="health">Здоровье</option>
+                        <option value="education">Обучение</option>
+                    </select>
+
+                    <select id="task-priority">
+                        <option value="high">Высокий</option>
+                        <option value="medium">Средний</option>
+                        <option value="low">Низкий</option>
+                    </select>
+
+                    <button type="submit">Добавить</button>
+                </form>
+
+                <ul id="task-list" class="task-list">
+                    <li class="empty-state">Нет задач. Добавьте первую задачу!</li>
+                </ul>
+
+                <div class="smart-suggestions">
+                    <h3>Умные подсказки</h3>
+                    <p id="suggestions-text">
+                        Начните добавлять задачи, чтобы получить персональные рекомендации!
+                    </p>
+                </div>
+            </div>
+        </div> <!-- конец main-content -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
